@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Overlay Bar */
+.overlay-bar {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background: rgba(169, 169, 169, 0.9);
+  color: #000;   
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 10;
+  gap: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.team-name {  
+  font-size: x-large;
+  font-weight: bold;
+}
+
+/* Team Info (Container) */
+.team-info {
+  display: flex;
+  align-items: center;
+  height: 70px;  /* Ensure container has sufficient height */
+  justify-content: space-between;  /* Ensures proper alignment between logo, vertical line, and text */
+  width: 100%;  /* Ensure full width */
+}
+
+/* Team Details */
+.team-details {
+  display: flex;
+  flex-direction: column;  /* Stack the items vertically */
+  justify-content: center;
+  align-items: center;  /* Center the items horizontally */
+  margin-left: 10px;
+  flex-grow: 1;  /* Allow this section to take available space */
+}
+
+/* Team Details (Right Side) */
+.team-details-right {
+  display: flex;
+  flex-direction: column; /* Stack the items vertically */
+  justify-content: center;
+  align-items: center; /* Center the items horizontally */
+  margin-right: 12px;
+  flex-grow: 1;  /* Allow this section to take available space */
+}
+
+
+/* Team Logo (Shifted inside) */
+.team-logo-left {
+  margin-left: 100px; 
+}
+
+/* Team Logo (Shifted inside) */
+.team-logo-right {  
+  margin-right: 100px;
+}
+
+/* Team Logo Drop Zone */
+.team-logo-dropzone {
+  width: 90px;
+  height: 90px;
+  min-width: 90px;
+  min-height: 90px;
+  max-width: 90px;
+  max-height: 90px;
+  border: 2px dashed gray;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.team-logo-dropzone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-logo-placeholder {
+  font-size: 12px;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Match Status Box */
+.match-status {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
+  color: #fff;
+  font-size: clamp(1rem, 5vw, 1.5rem); /* Adjusts the font size based on viewport width */
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  white-space: normal; /* Allow wrapping */
+  text-transform: uppercase;
+  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+  padding: 0 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  word-wrap: break-word;  /* Ensures long words will break */
+  width: 1000px;  
+}
+
+/* Vertical Line */
+.vertical-line {
+  width: 1px;
+  background-color: #000; /* Change to black */
+  margin: 0 15px;
+  height: 60px;  /* Ensure height matches the logo size */
+}
+
+
+/* Extra Details */
+.extra-details {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  z-index: 10;
+}
+
+
